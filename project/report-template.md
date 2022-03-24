@@ -10,10 +10,18 @@ It was the `WeightedEnsemble_L2` but it seemed marginally better than 2nd place 
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
-TODO: Add your explanation
+I found that no values strongly correlated to count. I saw `atemp` and `temp` were basically the same and highly correlated and both followed a standard distribution. We have 2 categorical values `weather` and `season`, and 2 binary values `holiday` and `workingday`. Also because `datetime` was an `object` it didn't show up in any analysis.
+
+I created features by converting `datetime` and taking all of its component values as individual features. I tried both pulling all the datetime values and also only extracting the `hour` as the other values seemed to be auto found by Autogluon. I also converted the 2 categorical values into category types.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-TODO: Add your explanation
+It was in terms of RMSE slightly better than twice as good. While the top model was the same, places 2 and 3 were different. I think the additon of the `hour` feature likely played the most important role.
+
+I tried another training run where I only added the `hour ` field as an explicit field and didn't extract the rest of the datetime (cause Autogluon seemed to do it on its own), this actually got ever so slightly better results than the version where every field from `datetime` was explicitly extracted.
+
+I tried a run where I didn't extract the datetime parts and only converted it to a datetime and converted the categories, this feature set did about as the orginal training with no feature engineering.
+
+I also did a run where I didn't convert the categorical fields so they were interpreted as `ints`. I did thoughextract the `hour` field and it showed about the same improvement in performance as when the category fields were type converted, but it wasn't as good.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
