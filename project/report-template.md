@@ -1,12 +1,12 @@
 # Report: Predict Bike Sharing Demand with AutoGluon Solution
-#### NAME HERE
+#### Louis Byers
 
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-TODO: Add your explanation
+First I realized that the test set didn't include 2 features ('casual' and 'registered') that I used to train the initial models. So I had to drop those columns from the training set and retrain the models. I also had to verify that the test set datetime matched the submisttions datetime so the predictions would match up.
 
 ### What was the top ranked model that performed?
-TODO: Add your explanation
+It was the `WeightedEnsemble_L2` but it seemed marginally better than 2nd place `RandomForestMSE_BAG_L2` or even `ExtraTreesMSE_BAG_L2` at least according the RMSE.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
