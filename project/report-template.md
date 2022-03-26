@@ -23,6 +23,15 @@ I tried a run where I didn't extract the datetime parts and only converted it to
 
 I also did a run where I didn't convert the categorical fields so they were interpreted as `ints`. I did thoughextract the `hour` field and it showed about the same improvement in performance as when the category fields were type converted, but it wasn't as good.
 
+Here is a table of my findings:
+|Categories Extracted|Hour Extracted|Other Date Parts Etracted|highest model score|
+|--|--|--|--|
+|No|No|No|-52.739146|
+|Yes|Yes|Yes|-30.195552|
+|Yes|Yes|No|-30.067164|
+|No|Yes|No|-30.249268|
+|Yes|No|No|-52.474577|
+
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
 TODO: Add your explanation
