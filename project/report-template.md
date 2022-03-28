@@ -15,7 +15,7 @@ I found that no values strongly correlated to count. I saw `atemp` and `temp` we
 I created features by converting `datetime` and taking all of its component values as individual features. I tried both pulling all the datetime values and also only extracting the `hour` as the other values seemed to be auto found by Autogluon. I also converted the 2 categorical values into category types.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-It was in terms of RMSE slightly better than twice as good. While the top model was the same, places 2 and 3 were different. I think the additon of the `hour` feature likely played the most important role.
+It was in terms of RMSE slightly better than twice as good. While the top model was the same as (I beleive that in most cases some weighted ensemble will be), places 2 and 3 were different, now they were `CatBoost_BAG_L2` and `LightGBM_BAG_L2`. The random forest and extra trees algorithms fell to 5 and 4 respectivvely. I think the additon of the `hour` feature likely played the most important role.
 
 I tried another training run where I only added the `hour ` field as an explicit field and didn't extract the rest of the datetime (cause Autogluon seemed to do it on its own), this actually got ever so slightly better results than the version where every field from `datetime` was explicitly extracted.
 
