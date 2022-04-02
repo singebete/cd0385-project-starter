@@ -42,9 +42,9 @@ TODO: Add your explanation
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|?|?|?|?|
-|add_features|?|?|?|?|
-|hpo|?|?|?|?|
+|initial|"n/a"|"n/a"|"n/a"|1.79859|
+|add_features|"n/a"|"n/a"|"n/a"|0.66854|
+|hpo|iterations: 2-10|depth 4-10|grow_policy: 'SymmetricTree', 'Depthwise', 'Lossguide'|0.44415|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
