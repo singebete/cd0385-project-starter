@@ -32,12 +32,16 @@ Here is a table of my findings:
 |No|Yes|No|-30.249268|
 |Yes|No|No|-52.474577|
 
+Note: A latter call to `predictor_new_hpo_all.feature_importance(hyper_param_train)` seems to validate that `hour` was the most important feature to add.
+
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-TODO: Add your explanation
+It performed roughly 30% better.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-TODO: Add your explanation
+I think I might try some feature engineering with exponential expansion and also potentially just using the scikit random forest
+and extra trees algorithms and doing some hyperparameter tuning there. Unfortinately Autogluon did not support tuning their
+hyperparams according to their docs.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
@@ -55,4 +59,8 @@ TODO: Add your explanation
 ![model_test_score.png](./img/model_test_score.png)
 
 ## Summary
-TODO: Add your explanation
+I learned how important feature engineering can be in really boosting a baseline performance metric. From there hyperparmater tuning
+is a very good place to spend time to improve performance. I learned it is really important to ensure you are utilizing your final
+success metric to judge the performance of a model rather than the model score. In this case because it was a RMSLE evaluation which
+punishes under preditction more than over predictions, the RMSE we used for the metric in model training wasn't a true indicator of
+the model's final performance.
