@@ -26,8 +26,8 @@ I also did a run where I didn't convert the categorical fields so they were inte
 Here is a table of my findings:
 |Categories Extracted|Hour Extracted|Other Date Parts Etracted|highest model score|
 |--|--|--|--|
-|No|No|No|-52.739146|
-|Yes|Yes|Yes|-30.195552|
+|No|No|No|-52.782125|
+|Yes|Yes|Yes|-30.115862|
 |Yes|Yes|No|-30.067164|
 |No|Yes|No|-30.249268|
 |Yes|No|No|-52.474577|
